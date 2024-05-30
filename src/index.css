@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    font-family: "DM Sans", sans-serif;
+    }
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    }
+section{
+    scroll-snap-align: center;
+    }
