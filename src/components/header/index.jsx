@@ -13,7 +13,7 @@ const Header = ({ onSetDarkMode, darkMode }) => {
         className="flex items-center justify-center  p-2 w-[40px] h-[35px]  rounded-sm"
         onClick={onSetDarkMode}
       >
-        {darkMode ? <FaMoon size={70} color="#0BA5E9" className="hover:opacity-[0.5]" /> : <FaSun  size={70} color="#0BA5E9" className="hover:opacity-[0.5]" />}{" "}
+        {darkMode ? <FaMoon size={70} color="#F9CA92" className="hover:opacity-[0.5]" /> : <FaSun  size={70} color="#FF7714" className="hover:opacity-[0.5]" />}{" "}
       </div>
     </div>
   );
