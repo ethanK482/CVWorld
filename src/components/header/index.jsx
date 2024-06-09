@@ -1,14 +1,12 @@
 /* eslint-disable react/prop-types */
 import { FaMoon, FaSun } from "react-icons/fa";
+import LOGO from "../../images/LOGO.svg"
+import {  Image } from "antd";
 const Header = ({ onSetDarkMode, darkMode }) => {
   return (
     <div className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
-      {" "}
-      <div>
-        <h1 className="dark:text-[#FF7714] ml-[20px] text-2xl font-bold ">
-          CV World
-        </h1>
-      </div>
+          <Image className="ml-3" width={100} preview={false} shape="square" src={LOGO}/>
+
       <div
         className="flex items-center justify-center  p-2 w-[40px] h-[35px]  rounded-sm"
         onClick={onSetDarkMode}
