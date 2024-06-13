@@ -6,7 +6,6 @@ import CV4 from "./images/CV4.jpg";
 import CV5 from "./images/CV5.png";
 import CV6 from "./images/CV5.png";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 const cvList = [CV1, CV2, CV3, CV4, CV5, CV6];
 const CVList = () => {
   const maxScrollWidth = useRef(0);

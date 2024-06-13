@@ -2,9 +2,14 @@
 import { FaMoon, FaSun } from "react-icons/fa";
 import LOGO from "../../images/LOGO.svg"
 import {  Image } from "antd";
+import { useNavigate } from "react-router-dom";
 const Header = ({ onSetDarkMode, darkMode }) => {
+  const navigate = useNavigate();
+  const handleNavigate = ()=>{
+    navigate("/");
+  }
   return (
-    <div className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
+    <div onClick={handleNavigate} className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
           <Image className="ml-3" width={100} preview={false} shape="square" src={LOGO}/>
 
       <div

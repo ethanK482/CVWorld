@@ -6,17 +6,18 @@ import CV from "../../images/CV.svg";
 import image3 from "../../images/image3.svg";
 import image4 from "../../images/image4.svg";
 import image5 from "../../images/image5.svg";
-import icon from "../../images/icon.svg";
-import UnorderedListOutlined from "@ant-design/icons"
+
 import Around from "../../images/Around.jsx";
 import { useEffect, useState } from "react";
 import { Guides } from "../guide/index.jsx";
+import { useNavigate } from "react-router-dom";
 const contents = [
   "Write your future into the world",
   "hello tao ten la huy",
   "Write your future into the world2",
 ];
 const Banner = () => {
+  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [isShowFront, setIsShowFront] = useState(true);
@@ -37,7 +38,10 @@ const Banner = () => {
       clearInterval(interval);
     };
   }, [index]);
-
+  
+  const handleNavigate = ()=>{
+    navigate("/templates");
+  }
   const textVariants = {
     initial: {
       x: -500,
@@ -151,6 +155,7 @@ const Banner = () => {
             {contents[index]}
           </motion.p>
           <motion.button
+            onClick={handleNavigate}
             variants={buttonHover}
             className="w-[248px] h-[55px] font-bold shadow-2xl bg-[#FF7714] ml-[40px] text-white "
             initial="initial"
