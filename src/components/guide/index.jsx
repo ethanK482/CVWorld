@@ -9,7 +9,7 @@ export const Guides = ({ activeTab, setActiveTab }) => {
   const handleClick = (index) => {
     setActiveTab(index);
   };
-  const mode = localStorage.getItem("displayMode");
+  const mode = localStorage.getItem("displayMode");   
 
   //function
   const getColorByMode = (index) => {
@@ -51,7 +51,7 @@ export const Guides = ({ activeTab, setActiveTab }) => {
               color: getColorByMode(index),
             }}
             transition={{ duration: 0.15, delay: 0.1 }} // Thêm độ trễ vào transition của màu chữ
-            className="text-[#fff] dark:text-[#000]"
+            className="text-[#fff] dark:text-[#000] font-semibold"
           >
             {tab}
             {step3Condition(index) && (
