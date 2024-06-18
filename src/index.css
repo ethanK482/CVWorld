@@ -1,47 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-    font-family: "DM Sans", sans-serif;
-    }
-html{
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    }
-.Newletter{
-    min-height: 40vh;
-    background-color: #024650;
-    margin: 200px 30px 0 30px;
-    border: 1px solid ;
-    border-radius: 35px;
-    position: relative;
+* {
+  font-family: "DM Sans", sans-serif;
 }
-.letterWrapper{
-    position: relative;
-    overflow: hidden;
-
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
-.iphone{
-    height: 500px;
-    position: absolute;
-    top: 50px;
-    right: 550px;
-
+.Newletter {
+  margin: 200px 30px 0 30px;
+  border: 1px solid;
+  border-radius: 35px;
+  position: relative;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.iphone2{
-    top: 100px;
-    right: 150px;
-    rotate: -90deg;
+.letterWrapper {
+  position: relative;
+  /* overflow: hidden; */
 }
-.letterWrapper h2{
-    font-weight: 700;
-    font-size: 40px;
-    margin-left: 25px;
-    margin-top: 25px;
-    color: #fff;
+.iphone {
+  height: 500px;
+  position: absolute;
+  top: -165px;
+  right: 550px;
 }
-.letterWrapper p{
-    max-width: 490px;
-    margin-left: 25px;
-
+.iphone2 {
+  top: -54px;
+  right: 150px;
+  rotate: -90deg;
+}
+.letterWrapper h2 {
+  font-weight: 700;
+  font-size: 40px;
+  margin-left: 25px;
+  margin-top: 25px;
+  color: #fff;
+  position: absolute;
+  top: 25%;
 }
