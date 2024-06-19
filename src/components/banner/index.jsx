@@ -9,10 +9,11 @@ import image3 from "../../images/image3.svg";
 import image4 from "../../images/image4.svg";
 import image5 from "../../images/image5.svg";
 
+import MainButton from "../mainButton/index.jsx";
+
 import Around from "../../images/Around.jsx";
 import { useEffect, useState } from "react";
 import { Guides } from "../guide/index.jsx";
-import { useNavigate } from "react-router-dom";
 const contents = [
   "Write your future into the new world",
   "Create a Professional CV in Minutes",
@@ -20,7 +21,6 @@ const contents = [
 ];
 const Banner = () => {
   const CVS = [CV, cv1, cv2, cv3];
-  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [isShowFront, setIsShowFront] = useState(true);
@@ -41,10 +41,7 @@ const Banner = () => {
       clearInterval(interval);
     };
   }, [index]);
-  
-  const handleNavigate = ()=>{
-    navigate("/templates");
-  }
+
   const textVariants = {
     initial: {
       x: -500,
@@ -103,26 +100,6 @@ const Banner = () => {
       },
     },
   };
-  const buttonHover = {
-    initial: {
-      y: -10,
-      opacity: 1,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.1,
-      },
-    },
-    hover: {
-      scale: 1.1,
-      transition: {
-        duration: 0.3,
-      },
-    },
-  };
   return (
     <>
       <div className="banner flex flex-col items-center md:items-center md:flex-col xl:flex-row xl:justify-between">
@@ -144,7 +121,10 @@ const Banner = () => {
             variants={textVariants}
             whileHover="hover"
           >
-            For <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[4rem] md:text-[4rem] font-bold ">Programer</span>
+            For{" "}
+            <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[4rem] md:text-[4rem] font-bold ">
+              Programer
+            </span>
           </motion.h2>
           <motion.p
             key={index}
@@ -157,16 +137,7 @@ const Banner = () => {
           >
             {contents[index]}
           </motion.p>
-          <motion.button
-            onClick={handleNavigate}
-            variants={buttonHover}
-            className="w-[17rem] h-[55px] font-bold shadow-2xl bg-[#FF7714] xl:ml-[40px] text-white "
-            initial="initial"
-            whileHover="hover"
-            animate="animate"
-          >
-            Create your CV
-          </motion.button>
+          <MainButton title={"Create your CV"} navigateTo={"/templates"} />
         </motion.div>
         <motion.div
           variants={CvBlockVariants}
@@ -267,7 +238,14 @@ const Banner = () => {
                 className="relative z-10 xl:right-[100px] sm:left-[50px] "
               >
                 <Image width={300} preview={true} src={image5} />
-                <DownloadOutlined className="xl:bottom-[17rem] xl:right-[-7rem] md:bottom-[13rem] md:right-[13rem]" style={{ fontSize: "100px", color: "#FF7714", position: "relative" }} />
+                <DownloadOutlined
+                  className="xl:bottom-[17rem] xl:right-[-7rem] md:bottom-[13rem] md:right-[13rem]"
+                  style={{
+                    fontSize: "100px",
+                    color: "#FF7714",
+                    position: "relative",
+                  }}
+                />
               </motion.div>
             </motion.div>
           )}
@@ -278,7 +256,6 @@ const Banner = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        
         <Guides activeTab={activeTab} setActiveTab={setActiveTab} />
       </motion.div>
     </>

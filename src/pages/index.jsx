@@ -15,7 +15,7 @@ const MainLayout = () => {
         <section className="bg-gradient-to-br  dark:from-[#040b0b] dark:to-[#162729] from-[#F6FEFF] to-[#75cfdc] h-[7vh] bg-[#EFF9FA] dark:bg-[#383838]  ">
           <Header darkMode={darkMode} onSetDarkMode={onSetDarkMode} />
         </section>
-        <Outlet />
+        <Outlet context={[darkMode]} />
       </div>
     </div>
   );
