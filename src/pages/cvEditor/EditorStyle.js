@@ -58,7 +58,6 @@ const EditorStyle = styled.div`
       right: 0;
       max-width: none;
       min-width: 100%;
-      max-height: 700px;
       overflow-y: auto;
     }
   }

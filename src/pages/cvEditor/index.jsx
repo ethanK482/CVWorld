@@ -16,7 +16,6 @@ const { TextArea } = Input;
 import BackArrow from "../../images/BackArrow.svg";
 import { getAnswer } from "../../utils/groq";
 import CV3 from "./cv/CV3";
-import { Footer } from "../../components/stayupLetter/inde";
 
 const Editor = () => {
   const { id } = useParams();
@@ -1096,7 +1095,7 @@ const Editor = () => {
   const renderCV = (type) => {
     if (type == "editing")
       return (
-        <div className=" fixed-block  p-5 bg-white  lg:max-h-screen">
+        <div className="fixed-block max-w-[700px] p-5 bg-white max-h-screen">
           {getCvById(id, cvState)}
         </div>
       );
@@ -1111,17 +1110,24 @@ const Editor = () => {
             preview={false}
             src={BackArrow}
           />
-          <div ref={targetRef} className="px-[5px]  border-1 bg-white mt-12 ">
+          <div
+            ref={targetRef}
+            className="px-[20px] py-[10px] border-1 bg-white mt-12 "
+          >
             {getCvById(id, cvState)}
           </div>
-          <Button onClick={() => toPDF()}>Download PDF now!!</Button>
+          <Button
+            onClick={() => toPDF()}
+          >
+            Download now!!
+          </Button>
         </div>
       </div>
     );
   };
   const renderEditor = () => {
     return (
-      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen md:mt-[100px] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
+      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen  md:mt-[100px] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
         <div className="w-[100%] grow ">
           <div className="hidden lg:block">
             <Steps
@@ -1146,13 +1152,10 @@ const Editor = () => {
   };
   return (
     <>
-   
       <EditorStyle>
         {" "}
         {step == 5 ? renderCV("finish") : renderEditor()}
-        
       </EditorStyle>
-   
     </>
   );
 };
