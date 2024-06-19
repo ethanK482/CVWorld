@@ -1,5 +1,5 @@
-const Around = () => (
-    <svg width="450" height="450" viewBox="0 0 450 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+const Around = ({width}) => (
+    <svg width={width} height="auto" viewBox="0 0 450 450" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d_12_35)">
         <path d="M445.838 3.52899L112.194 16.6352L8.10239 437.887L364.943 394.559" stroke="#FF9B04" strokeWidth="6"/>
         <path d="M445.838 3.52899L112.194 16.6352L8.10239 437.887L364.943 394.559" stroke="black" strokeOpacity="0.2" strokeWidth="6"/>
