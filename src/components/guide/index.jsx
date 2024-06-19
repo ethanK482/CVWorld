@@ -24,12 +24,7 @@ export const Guides = ({ activeTab, setActiveTab }) => {
   const step3Condition = (index) => index === 0 || index === 1;
   return (
     <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "100px",
-        position: "relative",
-      }}
+    className="flex justify-center md:mt-[6rem] xl:mt-[2rem] relative"
     >
       {tabs.map((tab, index) => (
         <motion.div
