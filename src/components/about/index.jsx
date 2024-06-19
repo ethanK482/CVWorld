@@ -23,18 +23,18 @@ const textVariants = {
 };
 export const About = () => {
   return (
-    <div className=" about-wrapper xl:h-[25rem] sm:h-[15rem] overflow-hidden ">
+    <div className=" about-wrapper xl:h-[25rem] sm:h-[15rem] overflow-hidden mt-[3rem] md:mt-[0]">
       <div className="about-content xl:m-[3rem] sm:m-[1.5rem] sm:h-[13.5rem] xl:h-[22rem] flex xl:gap-[25rem] md:gap-[4rem] dark:bg-white border-[5px] border-black rounded-[3rem]">
-        <div className="des p-[4rem] sm:p-[2.5rem]">
+        <div className="des p-[4rem] p-[2.5rem] md:p-[2rem] ">
           <motion.h2
-            className="xl:mt-[2rem] sm:mt-[1rem] sm:text-[1.5rem] xl:text-[2.4rem] font-[600] "
+            className="xl:mt-[2rem] md:mt-[1rem] md:text-[1.5rem] mt-[0.5rem] text-[1rem] xl:text-[2.4rem] font-[600]  "
             whileHover="hover"
             variants={textVariants}
           >
             Subscribe to out <strong className="text-[#FF7714]">CV World</strong>
           </motion.h2>
           <motion.span
-            className="block xl:my-[1.5rem]"
+            className="block xl:my-[1.5rem] md:my-[0rem] my-[1.5rem]  "
             whileHover="hover"
             variants={textVariants}
           >
