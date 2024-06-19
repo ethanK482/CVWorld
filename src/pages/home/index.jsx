@@ -7,7 +7,9 @@ import { Footer } from "../../components/stayupLetter/inde";
 const HomePage = () => {
   return (
 
+
     <section className="">
+
 
       <Banner />
       <Introduction1/>

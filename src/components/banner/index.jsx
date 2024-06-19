@@ -9,17 +9,17 @@ import image3 from "../../images/image3.svg";
 import image4 from "../../images/image4.svg";
 import image5 from "../../images/image5.svg";
 
+import MainButton from "../mainButton/index.jsx";
+
 import Around from "../../images/Around.jsx";
 import { useEffect, useState } from "react";
 import { Guides } from "../guide/index.jsx";
-import MainButton from "../mainButton/index.jsx";
 const contents = [
   "Write your future into the new world",
   "Create a Professional CV in Minutes",
   "Stand Out from the Crowd with CV World",
 ];
 const Banner = () => {
-
   const CVS = [CV, cv1, cv2, cv3];
 
   const [index, setIndex] = useState(0);
@@ -42,7 +42,6 @@ const Banner = () => {
       clearInterval(interval);
     };
   }, [index]);
-  
 
   const textVariants = {
     initial: {
@@ -103,6 +102,7 @@ const Banner = () => {
     },
   };
 
+  
   return (
     <>
       <div className="banner flex flex-col items-center md:items-center md:flex-col xl:flex-row xl:justify-between">
@@ -122,11 +122,14 @@ const Banner = () => {
           <motion.h2
 
             className="dark:text-[#ffff] dark:text-[#ffff] xl:text-[4rem] md:text-[4rem] text-[2.25rem] font-bold "
-
             variants={textVariants}
             whileHover="hover"
           >
-            For <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[4rem] md:text-[4rem] font-bold ">Programer</span>
+            For{" "}
+            <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[4rem] md:text-[4rem] font-bold ">
+              Programer
+            </span>
+
           </motion.h2>
           <motion.p
             key={index}
@@ -140,9 +143,7 @@ const Banner = () => {
             {contents[index]}
           </motion.p>
 
-
-          <MainButton title={"Create your CV"} navigateTo={"/templates"}/>
-
+          <MainButton title={"Create your CV"} navigateTo={"/templates"} />
 
         </motion.div>
         <motion.div
@@ -161,13 +162,13 @@ const Banner = () => {
                 animate="animate"
                 className="relative z-10 "
               >
-                <Image className="" preview={false} src={CVS[index]} />
+                <img className=" md:w-[22.5rem]"  src={CVS[index]} />
               </motion.div>
               <motion.div
                 variants={CvAroundVariants}
                 initial="initial"
                 animate="animate"
-                className="absolute left-[-91px] top-[58px] z-0 "
+                className="hidden md:block absolute left-[-91px] top-[58px] z-0 "
               >
                 <Around width="28rem"/>
               </motion.div>
@@ -185,17 +186,13 @@ const Banner = () => {
                 key={isShowFront ? "image3" : "image4"}
               >
                 {isShowFront ? (
-                  <Image
-                    height={450}
-                    width={600}
-                    preview={false}
+                  <img
+                  className="w-[18rem] h-[20rem] md:w-[28rem] md:h-[30rem]"
                     src={image3}
                   />
                 ) : (
-                  <Image
-                    height={450}
-                    width={600}
-                    preview={false}
+                  <img
+                  className="w-[18rem] h-[2g0rem] md:w-[28rem] md:h-[30rem]"
                     src={image4}
                   />
                 )}
@@ -203,7 +200,7 @@ const Banner = () => {
               <motion.div
                 initial="initial"
                 animate="animate"
-                className="absolute xl:left-[5rem] xl:top-[2rem] sm:left-[4rem] sm:top-[2rem] z-0"
+                className="absolute xl:left-[5rem] xl:top-[2rem] sm:left-[4rem] sm:top-[2rem] left-[1rem] top-[1rem] z-0"
                 transition={{ delay: 4 }}
               >
                 <motion.div
@@ -215,17 +212,13 @@ const Banner = () => {
                   style={{ cursor: "pointer" }}
                 >
                   {!isShowFront ? (
-                    <Image
-                      height={450}
-                      width={600}
-                      preview={false}
+                    <img
+                      className="w-[18rem] h-[20rem] md:w-[28rem] md:h-[30rem]"
                       src={image3}
                     />
                   ) : (
-                    <Image
-                      height={450}
-                      width={600}
-                      preview={false}
+                    <img
+                      className="w-[18rem] h-[20rem] md:w-[28rem] md:h-[30rem]"
                       src={image4}
                     />
                   )}
@@ -241,10 +234,19 @@ const Banner = () => {
                 variants={CvVariants}
                 initial="initial"
                 animate="animate"
-                className="relative z-10 xl:right-[100px] sm:left-[50px] "
+                className="relative z-10 xl:right-[100px] sm:left-[50px] right-[-55px] "
               >
                 <Image width={300} preview={true} src={image5} />
-                <DownloadOutlined className="md:bottom-[200px] md:right-[200px] xl:bottom-[250px] xl:right-[-100px]  " style={{ fontSize: "100px", color: "#FF7714", position: "relative" }} />
+
+                <DownloadOutlined
+                  className="xl:bottom-[17rem] xl:right-[-7rem] md:bottom-[13rem] md:right-[13rem] bottom-[12rem] right-[13rem]"
+                  style={{
+                    fontSize: "100px",
+                    color: "#FF7714",
+                    position: "relative",
+                  }}
+                />
+
               </motion.div>
             </motion.div>
           )}
@@ -255,7 +257,6 @@ const Banner = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        
         <Guides activeTab={activeTab} setActiveTab={setActiveTab} />
       </motion.div>
     </>

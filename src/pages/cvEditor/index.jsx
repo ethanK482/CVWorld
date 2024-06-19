@@ -2,7 +2,7 @@ import { Button, Form, Image, Input } from "antd";
 import { Steps } from "antd";
 import { useEffect, useState } from "react";
 import EditorStyle from "./EditorStyle";
-import { useOutletContext, useParams } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import MainButton from "../../components/mainButton";
 import CV1 from "./cv/CV1";
 import CV2 from "./cv/CV2";
@@ -16,6 +16,9 @@ const { TextArea } = Input;
 import BackArrow from "../../images/BackArrow.svg";
 import { getAnswer } from "../../utils/groq";
 import CV3 from "./cv/CV3";
+import {ArrowLeftOutlined} from "@ant-design/icons";
+import { motion } from "framer-motion";
+
 
 const Editor = () => {
   const { id } = useParams();
@@ -36,7 +39,12 @@ const Editor = () => {
     skills: [],
     about: [],
   };
-
+  useEffect(() => {
+    const cvStateStorage = localStorage.getItem(id);
+    if (cvStateStorage) {
+      setCvState(JSON.parse(cvStateStorage));
+    }
+  }, [id]);
   const [cvState, setCvState] = useState(initialCVValue);
   const STEP_TAB = [
     {
@@ -64,10 +72,15 @@ const Editor = () => {
   const onFinishForm = () => {
     setStep((step) => step + 1);
   };
+  const [form] = Form.useForm();
+  useEffect(() => {
+    form.setFieldsValue(cvState);
+  }, [cvState, form]);
 
   const renderStepOneForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -141,6 +154,7 @@ const Editor = () => {
   const renderStepTwoForm = () => {
     return (
       <Form
+        form={form}
         onFinish={onFinishForm}
         initialValues={cvState}
         name="control-hooks flex justify-end"
@@ -386,6 +400,7 @@ const Editor = () => {
   const renderStepThreeForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -613,6 +628,7 @@ const Editor = () => {
   const renderStepFourForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -727,6 +743,7 @@ const Editor = () => {
       return item;
     });
     setCvState((pre) => ({ ...pre, about: newAbout }));
+    localStorage.setItem(id, JSON.stringify(cvState));
   };
   const getKeywordAndTitle = (index) => {
     const aboutExist = cvState?.about?.find((item) => item.index == index);
@@ -735,6 +752,7 @@ const Editor = () => {
   const renderStepFiveForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -1074,6 +1092,8 @@ const Editor = () => {
         console.warn(`Unhandled field: ${field}`);
       }
     }
+
+    localStorage.setItem(id, JSON.stringify(cvState));
   };
   const renderCV = (type) => {
     if (type == "editing")
@@ -1086,6 +1106,12 @@ const Editor = () => {
     return (
       <div className="w-full p-5 flex justify-center min-h-screen">
         <div className="relative w-[55%]">
+        <Button
+            className="btn-download relative top-[30px] font-bold" 
+            onClick={() => toPDF()}
+          >
+            Download
+          </Button>
           <Image
             onClick={handleBack}
             width={50}
@@ -1095,35 +1121,59 @@ const Editor = () => {
           />
           <div
             ref={targetRef}
-            className="px-[30px] py-[10px] border-1 bg-white mt-12 "
+            className="px-[20px] py-[10px] border-1 bg-white mt-12 "
           >
             {getCvById(id, cvState)}
           </div>
-          <DownloadOutlined
-            onClick={() => toPDF()}
-            style={{
-              color: "#fff",
-              fontSize: "50px",
-              position: "absolute",
-              bottom: "100px",
-              right: "-6em",
-            }}
-          />
         </div>
       </div>
     );
   };
+  const buttonHover = {
+    initial: {
+      y: -10,
+      opacity: 1,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+      },
+    },
+    hover: {
+      scale: 1.1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+  const navigate = useNavigate();
   const renderEditor = () => {
     return (
-      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen max-w-[50%] ">
+      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen  md:mt-[100px] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
         <div className="w-[100%] grow ">
-          <Steps
-            className={`${mode}`}
-            style={{ color: "white" }}
-            size="small"
-            current={step}
-            items={STEP_TAB}
-          />
+        <motion.button
+      onClick={()=> navigate("/templates")}
+      variants={buttonHover}
+      className="text-[white] bg-[#FF7714] p-[0.75rem] font-bold shadow-2xl flex gap-[0.5rem] w-[248px] h-[55px] justify-center items-center "
+      initial="initial"
+      whileHover="hover"
+      animate="animate"
+    >
+      <ArrowLeftOutlined style={{fontSize: "1.5rem"}}/>Back To Templates 
+    </motion.button>
+          <div className="hidden lg:block">
+            <Steps
+              className={`${mode} `}
+              style={{ color: "white" }}
+              size="small"
+              current={step}
+              items={STEP_TAB}
+            />
+          </div>
+
           <div className="w-full text-center">
             <h1 className="font-sans text-[#000] dark:text-[#fff] text-4xl  font-semibold my-8 ">
               <span className="text-[#FF7714] ">Enter your information</span>
@@ -1136,7 +1186,12 @@ const Editor = () => {
     );
   };
   return (
-    <EditorStyle>{step == 5 ? renderCV("finish") : renderEditor()}</EditorStyle>
+    <>
+      <EditorStyle>
+        {" "}
+        {step == 5 ? renderCV("finish") : renderEditor()}
+      </EditorStyle>
+    </>
   );
 };
 export default Editor;
