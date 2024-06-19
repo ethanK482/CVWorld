@@ -10,14 +10,14 @@ import image5 from "../../images/image5.svg";
 import Around from "../../images/Around.jsx";
 import { useEffect, useState } from "react";
 import { Guides } from "../guide/index.jsx";
-import { useNavigate } from "react-router-dom";
+import MainButton from "../mainButton/index.jsx";
 const contents = [
   "Write your future into the world",
   "hello tao ten la huy",
   "Write your future into the world2",
 ];
 const Banner = () => {
-  const navigate = useNavigate();
+
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [isShowFront, setIsShowFront] = useState(true);
@@ -39,9 +39,7 @@ const Banner = () => {
     };
   }, [index]);
   
-  const handleNavigate = ()=>{
-    navigate("/templates");
-  }
+
   const textVariants = {
     initial: {
       x: -500,
@@ -100,26 +98,7 @@ const Banner = () => {
       },
     },
   };
-  const buttonHover = {
-    initial: {
-      y: -10,
-      opacity: 1,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.1,
-      },
-    },
-    hover: {
-      scale: 1.1,
-      transition: {
-        duration: 0.3,
-      },
-    },
-  };
+
   return (
     <BannerStyle>
       <div className="banner flex justify-between">
@@ -154,16 +133,7 @@ const Banner = () => {
           >
             {contents[index]}
           </motion.p>
-          <motion.button
-            onClick={handleNavigate}
-            variants={buttonHover}
-            className="w-[248px] h-[55px] font-bold shadow-2xl bg-[#FF7714] ml-[40px] text-white "
-            initial="initial"
-            whileHover="hover"
-            animate="animate"
-          >
-            Create your CV
-          </motion.button>
+          <MainButton title={"Create your CV"} navigateTo={"/templates"}/>
         </motion.div>
         <motion.div
           variants={CvBlockVariants}

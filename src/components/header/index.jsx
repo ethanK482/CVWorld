@@ -9,8 +9,8 @@ const Header = ({ onSetDarkMode, darkMode }) => {
     navigate("/");
   }
   return (
-    <div onClick={handleNavigate} className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
-          <Image className="ml-3" width={100} preview={false} shape="square" src={LOGO}/>
+    <div  className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
+          <Image onClick={handleNavigate} className="ml-3" width={100} preview={false} shape="square" src={LOGO}/>
 
       <div
         className="flex items-center justify-center  p-2 w-[40px] h-[35px]  rounded-sm"
