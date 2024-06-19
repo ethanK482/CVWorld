@@ -9,7 +9,7 @@ const EditorStyle = styled.div`
   .ant-form-item {
     margin-bottom: 2rem;
   }
-  .ant-steps{
+  .ant-steps {
     margin-top: 40px;
   }
   .dark {
@@ -44,11 +44,23 @@ const EditorStyle = styled.div`
     right: 0;
     max-width: 49%;
     min-width: 49%;
-    height: 100vh; /* Adjust height as needed */
-    overflow-y: auto; /* Enable scrolling if content overflows */
-
+    height: 100vh;
+    overflow-y: auto;
     padding-bottom: 70px;
-    background-color: white; /* Ensure the background remains white */
+    background-color: white;
+  }
+
+  @media (max-width: 830px) {
+    .fixed-block {
+      position: relative;
+      width: 100%;
+      left: 0;
+      right: 0;
+      max-width: none;
+      min-width: 100%;
+      max-height: 700px;
+      overflow-y: auto;
+    }
   }
 `;
 

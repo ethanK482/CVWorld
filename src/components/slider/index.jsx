@@ -5,9 +5,9 @@ import slider3 from "../../images/slide3.png"
 const Slider = () => {
   return (
     <Carousel autoplay={true} autoplaySpeed={3000}>
-      <Image preview={false} src={slider1}/>
-      <Image preview={false} src={slider2}/>
-      <Image preview={false} src={slider3}/>
+      <Image height={"100%"} width={"100%"} preview={false} src={slider1}/>
+      <Image height={"100%"} width={"100%"} preview={false} src={slider2}/>
+      <Image height={"100%"} width={"100%"} preview={false} src={slider3}/>
     </Carousel>
   );
 };
