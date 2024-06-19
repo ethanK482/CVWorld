@@ -1159,7 +1159,7 @@ const Editor = () => {
         <motion.button
       onClick={()=> navigate("/templates")}
       variants={buttonHover}
-      className="text-[white] bg-[#FF7714] p-[0.75rem] font-bold shadow-2xl flex gap-[0.5rem] w-[248px] h-[55px] justify-center items-center "
+      className="text-[white] border-2 border-[#FF7714]  p-[0.75rem] font-bold shadow-2xl flex gap-[0.5rem] w-[248px] h-[55px] justify-center items-center "
       initial="initial"
       whileHover="hover"
       animate="animate"
