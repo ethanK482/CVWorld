@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
 
 
-    <section className="">
+    <section className="lg:mt-[-0.1rem] md:mt-[6rem] ">
 
 
       <Banner />
