@@ -101,6 +101,7 @@ const Banner = () => {
       },
     },
   };
+
   return (
     <>
       <div className="banner flex flex-col items-center md:items-center md:flex-col xl:flex-row xl:justify-between">
