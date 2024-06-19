@@ -21,7 +21,6 @@ const contents = [
 const Banner = () => {
 
   const CVS = [CV, cv1, cv2, cv3];
-  const navigate = useNavigate();
 
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
@@ -121,7 +120,7 @@ const Banner = () => {
             CV Web Design
           </motion.h2>
           <motion.h2
-            className="dark:text-[#ffff] dark:text-[#ffff] xl:text-[60px] md:text-[2rem] text-[2.25rem] font-bold "
+            className="dark:text-[#ffff]  xl:text-[60px] md:text-[2rem] text-[2.25rem] font-bold "
             variants={textVariants}
             whileHover="hover"
           >
