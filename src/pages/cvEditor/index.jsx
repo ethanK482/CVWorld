@@ -36,7 +36,12 @@ const Editor = () => {
     skills: [],
     about: [],
   };
-
+  useEffect(() => {
+    const cvStateStorage = localStorage.getItem(id);
+    if (cvStateStorage) {
+      setCvState(JSON.parse(cvStateStorage));
+    }
+  }, [id]);
   const [cvState, setCvState] = useState(initialCVValue);
   const STEP_TAB = [
     {
@@ -64,10 +69,15 @@ const Editor = () => {
   const onFinishForm = () => {
     setStep((step) => step + 1);
   };
+  const [form] = Form.useForm();
+  useEffect(() => {
+    form.setFieldsValue(cvState);
+  }, [cvState, form]);
 
   const renderStepOneForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -141,6 +151,7 @@ const Editor = () => {
   const renderStepTwoForm = () => {
     return (
       <Form
+        form={form}
         onFinish={onFinishForm}
         initialValues={cvState}
         name="control-hooks flex justify-end"
@@ -386,6 +397,7 @@ const Editor = () => {
   const renderStepThreeForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -613,6 +625,7 @@ const Editor = () => {
   const renderStepFourForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -727,6 +740,7 @@ const Editor = () => {
       return item;
     });
     setCvState((pre) => ({ ...pre, about: newAbout }));
+    localStorage.setItem(id, JSON.stringify(cvState));
   };
   const getKeywordAndTitle = (index) => {
     const aboutExist = cvState?.about?.find((item) => item.index == index);
@@ -735,6 +749,7 @@ const Editor = () => {
   const renderStepFiveForm = () => {
     return (
       <Form
+        form={form}
         initialValues={cvState}
         onFinish={onFinishForm}
         name="control-hooks flex justify-end"
@@ -1074,6 +1089,8 @@ const Editor = () => {
         console.warn(`Unhandled field: ${field}`);
       }
     }
+
+    localStorage.setItem(id, JSON.stringify(cvState));
   };
   const renderCV = (type) => {
     if (type == "editing")
@@ -1095,35 +1112,33 @@ const Editor = () => {
           />
           <div
             ref={targetRef}
-            className="px-[30px] py-[10px] border-1 bg-white mt-12 "
+            className="px-[20px] py-[10px] border-1 bg-white mt-12 "
           >
             {getCvById(id, cvState)}
           </div>
-          <DownloadOutlined
+          <Button
             onClick={() => toPDF()}
-            style={{
-              color: "#fff",
-              fontSize: "50px",
-              position: "absolute",
-              bottom: "100px",
-              right: "-6em",
-            }}
-          />
+          >
+            Download now!!
+          </Button>
         </div>
       </div>
     );
   };
   const renderEditor = () => {
     return (
-      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen max-w-[50%] ">
+      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen  md:mt-[100px] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
         <div className="w-[100%] grow ">
-          <Steps
-            className={`${mode}`}
-            style={{ color: "white" }}
-            size="small"
-            current={step}
-            items={STEP_TAB}
-          />
+          <div className="hidden lg:block">
+            <Steps
+              className={`${mode} `}
+              style={{ color: "white" }}
+              size="small"
+              current={step}
+              items={STEP_TAB}
+            />
+          </div>
+
           <div className="w-full text-center">
             <h1 className="font-sans text-[#000] dark:text-[#fff] text-4xl  font-semibold my-8 ">
               <span className="text-[#FF7714] ">Enter your information</span>
@@ -1136,7 +1151,12 @@ const Editor = () => {
     );
   };
   return (
-    <EditorStyle>{step == 5 ? renderCV("finish") : renderEditor()}</EditorStyle>
+    <>
+      <EditorStyle>
+        {" "}
+        {step == 5 ? renderCV("finish") : renderEditor()}
+      </EditorStyle>
+    </>
   );
 };
 export default Editor;
