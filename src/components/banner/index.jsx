@@ -15,7 +15,7 @@ import { Guides } from "../guide/index.jsx";
 import MainButton from "../mainButton/index.jsx";
 const contents = [
   "Write your future into the new world",
-  "Craft Your Future: Create a Professional CV in Minutes",
+  "Create a Professional CV in Minutes",
   "Stand Out from the Crowd with CV World",
 ];
 const Banner = () => {
@@ -107,24 +107,26 @@ const Banner = () => {
     <>
       <div className="banner flex flex-col items-center md:items-center md:flex-col xl:flex-row xl:justify-between">
         <motion.div
-          className="textContainer leading-[1.2] pt-[3.5rem] xl:pl-[10rem] xl:pt-[10.25rem] md:pt-[5rem]  "
+          className="textContainer leading-[1.2] pt-[3.5rem] xl:pl-[10rem] xl:pt-[10.25rem] md:pt-[2rem] md:w-[30rem] xl:w-[60rem] "
           variants={textVariants}
           initial="initial"
           animate="animate"
         >
           <motion.h2
-            className="text-[#090909] dark:text-[#ffff] xl:text-[4rem] md:text-[2rem] text-[2.25rem]  font-bold "
+            className="text-[#090909] dark:text-[#ffff] xl:text-[4rem] md:text-[4rem] text-[2.25rem]  font-bold "
             variants={textVariants}
             whileHover="hover"
           >
             CV Web Design
           </motion.h2>
           <motion.h2
-            className="dark:text-[#ffff]  xl:text-[60px] md:text-[2rem] text-[2.25rem] font-bold "
+
+            className="dark:text-[#ffff] dark:text-[#ffff] xl:text-[4rem] md:text-[4rem] text-[2.25rem] font-bold "
+
             variants={textVariants}
             whileHover="hover"
           >
-            For <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[60px] md:text-[2rem] font-bold ">Programer</span>
+            For <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[4rem] md:text-[4rem] font-bold ">Programer</span>
           </motion.h2>
           <motion.p
             key={index}
@@ -133,19 +135,21 @@ const Banner = () => {
             animate="animate"
             exit="exit"
             whileHover="hover"
-            className="text-[#090909] dark:text-[#ffff] py-[1.25rem] mb-[1.6rem] sm:max-w-[15rem] xl:max-w-[30rem] font-semibold"
+            className="text-[#090909] text-[0.64rem] md:text-[1rem]  dark:text-[#ffff] py-[1.25rem] mb-[1.6rem] sm:max-w-[15rem] xl:max-w-[30rem] md:max-w-[20rem]  font-semibold"
           >
             {contents[index]}
           </motion.p>
 
+
           <MainButton title={"Create your CV"} navigateTo={"/templates"}/>
+
 
         </motion.div>
         <motion.div
           variants={CvBlockVariants}
           animate="animate"
           whileHover="hover"
-          className="xl:mr-[200px] mt-[50px] md:mr-0  relative "
+          className="xl:mr-[12rem] mt-[50px] md:mr-0  relative "
         >
           {activeTab === 0 && (
             <motion.div>
@@ -155,17 +159,17 @@ const Banner = () => {
                 variants={CvVariants}
                 initial="initial"
                 animate="animate"
-                className="relative z-10"
+                className="relative z-10 "
               >
-                <Image preview={false} src={CVS[index]} />
+                <Image className="" preview={false} src={CVS[index]} />
               </motion.div>
               <motion.div
                 variants={CvAroundVariants}
                 initial="initial"
                 animate="animate"
-                className="absolute left-[-91px] top-[58px] z-0"
+                className="absolute left-[-91px] top-[58px] z-0 "
               >
-                <Around />
+                <Around width="28rem"/>
               </motion.div>
             </motion.div>
           )}
@@ -237,11 +241,10 @@ const Banner = () => {
                 variants={CvVariants}
                 initial="initial"
                 animate="animate"
-                className="relative z-10 xl:right-[100px] sm:left-[50px]"
+                className="relative z-10 xl:right-[100px] sm:left-[50px] "
               >
                 <Image width={300} preview={true} src={image5} />
-                <DownloadOutlined style={{ fontSize: "100px", color: "#FF7714", position: "relative" , bottom:250, right:200 }} />
-
+                <DownloadOutlined className="md:bottom-[200px] md:right-[200px] xl:bottom-[250px] xl:right-[-100px]  " style={{ fontSize: "100px", color: "#FF7714", position: "relative" }} />
               </motion.div>
             </motion.div>
           )}
