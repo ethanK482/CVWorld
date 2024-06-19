@@ -3,6 +3,9 @@ import { DownloadOutlined } from "@ant-design/icons";
 import BannerStyle from "./Banner.style";
 import { motion } from "framer-motion";
 import CV from "../../images/CV.svg";
+import cv1 from "../../images/cv1.svg";
+import cv2 from "../../images/cv2.svg";
+import cv3 from "../../images/cv3.svg";
 import image3 from "../../images/image3.svg";
 import image4 from "../../images/image4.svg";
 import image5 from "../../images/image5.svg";
@@ -13,10 +16,13 @@ import { Guides } from "../guide/index.jsx";
 import MainButton from "../mainButton/index.jsx";
 const contents = [
   "Write your future into the world",
-  "hello tao ten la huy",
-  "Write your future into the world2",
+  "Craft Your Future: Create a Professional CV in Minutes",
+  "Stand Out from the Crowd with CV World",
 ];
 const Banner = () => {
+
+  const CVS = [CV, cv1, cv2, cv3];
+  const navigate = useNavigate();
 
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
@@ -129,7 +135,7 @@ const Banner = () => {
             animate="animate"
             exit="exit"
             whileHover="hover"
-            className="text-[#090909] dark:text-[#ffff] py-[20px] mb-[25px]  font-thin"
+            className="text-[#090909] dark:text-[#ffff] py-[20px] mb-[25px]  font-semibold"
           >
             {contents[index]}
           </motion.p>
@@ -151,7 +157,7 @@ const Banner = () => {
                 animate="animate"
                 className="relative z-10"
               >
-                <Image preview={false} src={CV} />
+                <Image preview={false} src={CVS[index]} />
               </motion.div>
               <motion.div
                 variants={CvAroundVariants}
