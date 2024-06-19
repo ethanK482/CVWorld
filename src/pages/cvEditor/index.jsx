@@ -1104,7 +1104,7 @@ const Editor = () => {
       );
 
     return (
-      <div className="w-full p-5 flex justify-center min-h-screen md:pt-[10rem]">
+      <div className="w-full p-5 flex justify-center min-h-screen md:pt-[10rem] lg:pt-0">
         <div className="relative lg:w-[55%] w-[70%] ">
         <Button
             className="btn-download relative top-[30px] font-bold" 
