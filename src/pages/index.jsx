@@ -12,9 +12,8 @@ const MainLayout = () => {
   return (
     <div className={`${darkMode ? "dark" : ""} `}>
 
-
-      <div className="bg-gradient-to-br  dark:from-[#162729] dark:to-[#040b0b] #F6FEFF from-[#75cfdc] to-[#F6FEFF] mt-[58px] ">
-        <section className=" fixed left-0 right-0 top-0 z-50 bg-gradient-to-br  dark:from-[#040b0b] dark:to-[#162729] from-[#F6FEFF] to-[#75cfdc] h-[8vh] bg-[#EFF9FA] dark:bg-[#383838]  ">
+      <div className="bg-gradient-to-br  dark:from-[#162729] dark:to-[#040b0b]  from-[#75cfdc] to-[#F6FEFF] ">
+        <section className="bg-gradient-to-br  dark:from-[#040b0b] dark:to-[#162729] from-[#F6FEFF] to-[#75cfdc] h-[7vh] bg-[#EFF9FA] dark:bg-[#383838]  ">
 
           <Header darkMode={darkMode} onSetDarkMode={onSetDarkMode} />
         </section>
