@@ -21,6 +21,7 @@ const contents = [
 ];
 const Banner = () => {
   const CVS = [CV, cv1, cv2, cv3];
+
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [isShowFront, setIsShowFront] = useState(true);
@@ -117,6 +118,7 @@ const Banner = () => {
             CV Web Design
           </motion.h2>
           <motion.h2
+
             className="dark:text-[#ffff] dark:text-[#ffff] xl:text-[4rem] md:text-[4rem] text-[2.25rem] font-bold "
             variants={textVariants}
             whileHover="hover"
@@ -125,6 +127,7 @@ const Banner = () => {
             <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[4rem] md:text-[4rem] font-bold ">
               Programer
             </span>
+
           </motion.h2>
           <motion.p
             key={index}
@@ -137,7 +140,9 @@ const Banner = () => {
           >
             {contents[index]}
           </motion.p>
+
           <MainButton title={"Create your CV"} navigateTo={"/templates"} />
+
         </motion.div>
         <motion.div
           variants={CvBlockVariants}
@@ -163,7 +168,7 @@ const Banner = () => {
                 animate="animate"
                 className="absolute left-[-91px] top-[58px] z-0 "
               >
-                <Around />
+                <Around width="28rem"/>
               </motion.div>
             </motion.div>
           )}
@@ -238,6 +243,7 @@ const Banner = () => {
                 className="relative z-10 xl:right-[100px] sm:left-[50px] "
               >
                 <Image width={300} preview={true} src={image5} />
+
                 <DownloadOutlined
                   className="xl:bottom-[17rem] xl:right-[-7rem] md:bottom-[13rem] md:right-[13rem]"
                   style={{
@@ -246,6 +252,7 @@ const Banner = () => {
                     position: "relative",
                   }}
                 />
+
               </motion.div>
             </motion.div>
           )}
