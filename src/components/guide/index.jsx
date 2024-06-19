@@ -55,7 +55,7 @@ export const Guides = ({ activeTab, setActiveTab }) => {
           >
             {tab}
             {step3Condition(index) && (
-              <Image preview={false} src={Line3} className="mx-[30px]" />
+              <img preview={false} src={Line3} className="mx-[30px] xl:inline-block md:relative sm:hidden" />
             )}
           </motion.span>
         </motion.div>
