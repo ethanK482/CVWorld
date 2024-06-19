@@ -1,5 +1,6 @@
 import Frame35 from "../../images/Frame35.svg";
 import iphone2 from "../../images/iphone2.svg";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -35,6 +36,7 @@ const Introduction1 = () => {
         </div>
       </div>
     </div>
+
   );
 };
 export default Introduction1;

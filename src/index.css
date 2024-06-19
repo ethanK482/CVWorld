@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   font-family: "DM Sans", sans-serif;
 }
@@ -10,10 +11,12 @@ html {
   overflow-x: hidden;
 }
 .Newletter {
+
   margin: 200px 30px 0 30px;
   border: 1px solid;
   border-radius: 35px;
   position: relative;
+
   background: #f12711; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -29,10 +32,12 @@ html {
 .letterWrapper {
   position: relative;
   /* overflow: hidden; */
+
 }
 .iphone {
   height: 500px;
   position: absolute;
+
   top: -165px;
   right: 550px;
 }
@@ -47,6 +52,8 @@ html {
   margin-left: 25px;
   margin-top: 25px;
   color: #fff;
+
   position: absolute;
   top: 25%;
+
 }

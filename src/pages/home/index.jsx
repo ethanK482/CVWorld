@@ -6,7 +6,9 @@ import { Footer } from "../../components/stayupLetter/inde";
 
 const HomePage = () => {
   return (
-    <section className=" ">
+
+    <section className="h-[93vh] mt-[7vh] ">
+
       <Banner />
       <Introduction1/>
       <Introduction2/>
