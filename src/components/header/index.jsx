@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FaMoon, FaSun } from "react-icons/fa";
 import LOGO from "../../images/LOGO.svg"
-import {  Image } from "antd";
 import { useNavigate } from "react-router-dom";
 const Header = ({ onSetDarkMode, darkMode }) => {
   const navigate = useNavigate();
@@ -9,8 +8,10 @@ const Header = ({ onSetDarkMode, darkMode }) => {
     navigate("/");
   }
   return (
-    <div onClick={handleNavigate} className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
-          <img className="ml-3 w-[5rem] md:w-[6.25rem]"  src={LOGO}/>
+
+    <div  className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
+          <img onClick={handleNavigate} className="ml-3 w-[5rem] md:w-[6.25rem]"  src={LOGO}/>
+
 
       <div
         className="flex items-center justify-center  p-2 w-[40px] h-[35px]  rounded-sm"

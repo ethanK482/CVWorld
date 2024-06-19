@@ -1125,6 +1125,7 @@ const Editor = () => {
           >
             {getCvById(id, cvState)}
           </div>
+
         </div>
       </div>
     );
@@ -1154,6 +1155,7 @@ const Editor = () => {
     return (
       <div className="flex justify-between m-2 p-5 gap-3 min-h-screen  md:mt-[100px] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
         <div className="w-[100%] grow ">
+
         <motion.button
       onClick={()=> navigate("/templates")}
       variants={buttonHover}
@@ -1164,6 +1166,7 @@ const Editor = () => {
     >
       <ArrowLeftOutlined style={{fontSize: "1.5rem"}}/>Back To Templates 
     </motion.button>
+
           <div className="hidden lg:block">
             <Steps
               className={`${mode} `}
