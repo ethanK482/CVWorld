@@ -1104,8 +1104,8 @@ const Editor = () => {
       );
 
     return (
-      <div className="w-full p-5 flex justify-center min-h-screen">
-        <div className="relative w-[55%]">
+      <div className="w-full p-5 flex justify-center min-h-screen md:pt-[10rem]">
+        <div className="relative lg:w-[55%] w-[70%] ">
         <Button
             className="btn-download relative top-[30px] font-bold" 
             onClick={() => toPDF()}
@@ -1115,7 +1115,7 @@ const Editor = () => {
           <Image
             onClick={handleBack}
             width={50}
-            className="hover:opacity-[0.8] absolute top-0 left-[-15em]"
+            className="hover:opacity-[0.8] absolute top-0 md:left-[-15em] left-[-11em] "
             preview={false}
             src={BackArrow}
           />
