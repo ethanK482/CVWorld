@@ -32,7 +32,7 @@ const MainButton = ({ navigateTo, title, action, disabled=false }) => {
       disabled={disabled}
       onClick={handleOnClick}
       variants={buttonHover}
-      className="w-[248px] h-[55px] font-bold shadow-2xl bg-[#FF7714] ml-[40px] text-white  "
+      className="w-[248px] h-[55px] font-bold shadow-2xl bg-[#FF7714] text-white  "
       initial="initial"
       whileHover="hover"
       animate="animate"

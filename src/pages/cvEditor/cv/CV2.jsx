@@ -18,10 +18,11 @@ const CV2 = ({ cvState }) => {
       <div className="max-w-2xl mx-auto p-4">
         <div className="flex justify-between items-start">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-[#6B6254]">{position}</h1>
-            <h2 className="text-xl">
+          <h2 className="text-3xl">
               {firstName} {lastName}
             </h2>
+            <h1 className="text-2xl font-bold text-[#6B6254]">{position}</h1>
+           
           </div>
           <div className="text-sm my-4">
             {phone && <p>Phone: {phone}</p>}
@@ -32,8 +33,8 @@ const CV2 = ({ cvState }) => {
         </div>
 
         <div>
-          {!!experiences.length > 0 && (
-            <h3 className="text-lg font-bold text-[#5A5755] bg-[#F0E8E1] leading-6  px-1">
+          {!!experiences?.length > 0 && (
+            <h3 className="text-lg font-bold text-[#5A5755]  leading-6  px-1">
               Work Experience
             </h3>
           )}
@@ -54,8 +55,8 @@ const CV2 = ({ cvState }) => {
         </div>
 
         <div className="my-4">
-          {!!educations.length > 0 && (
-            <h3 className="text-lg font-bold text-[#5A5755] bg-[#F0E8E1] leading-6  px-1">
+          {!!educations?.length > 0 && (
+            <h3 className="text-lg font-bold text-[#5A5755]  leading-6  px-1">
               Education
             </h3>
           )}
@@ -74,8 +75,8 @@ const CV2 = ({ cvState }) => {
           ))}
         </div>
         <div className="my-4">
-          {!!skills.length > 0 && (
-            <h3 className="text-lg font-bold text-[#5A5755] bg-[#F0E8E1] leading-6  px-1">
+          {!!skills?.length > 0 && (
+            <h3 className="text-lg font-bold text-[#5A5755]  leading-6  px-1">
               Skills
             </h3>
           )}
@@ -88,8 +89,8 @@ const CV2 = ({ cvState }) => {
           </ul>
         </div>
         <div>
-          {!!about.length > 0 && (
-            <h3 className="text-lg font-bold text-[#5A5755] bg-[#F0E8E1] leading-6  px-1">
+          {!!about?.length > 0 && (
+            <h3 className="text-lg font-bold text-[#5A5755]  leading-6  px-1">
               About
             </h3>
           )}
