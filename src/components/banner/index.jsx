@@ -1,6 +1,5 @@
 import { Image } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
-import BannerStyle from "./Banner.style";
 import { motion } from "framer-motion";
 import CV from "../../images/CV.svg";
 import cv1 from "../../images/cv1.svg";
@@ -15,7 +14,7 @@ import { useEffect, useState } from "react";
 import { Guides } from "../guide/index.jsx";
 import { useNavigate } from "react-router-dom";
 const contents = [
-  "Write your future into the world",
+  "Write your future into the new world",
   "Craft Your Future: Create a Professional CV in Minutes",
   "Stand Out from the Crowd with CV World",
 ];
@@ -125,27 +124,27 @@ const Banner = () => {
     },
   };
   return (
-    <BannerStyle>
-      <div className="banner flex justify-between">
+    <>
+      <div className="banner flex flex-col items-center md:items-center md:flex-col xl:flex-row xl:justify-between">
         <motion.div
-          className="textContainer"
+          className="textContainer leading-[1.2] pt-[3.5rem] xl:pl-[10rem] xl:pt-[10.25rem] md:pt-[5rem]  "
           variants={textVariants}
           initial="initial"
           animate="animate"
         >
           <motion.h2
-            className="text-[#090909] dark:text-[#ffff]"
+            className="text-[#090909] dark:text-[#ffff] xl:text-[4rem] md:text-[2rem] text-[2.25rem]  font-bold "
             variants={textVariants}
             whileHover="hover"
           >
             CV Web Design
           </motion.h2>
           <motion.h2
-            className="dark:text-[#ffff]"
+            className="dark:text-[#ffff] dark:text-[#ffff] xl:text-[60px] md:text-[2rem] text-[2.25rem] font-bold "
             variants={textVariants}
             whileHover="hover"
           >
-            For <span className="text-[#FF7714]">Programer</span>
+            For <span className="text-[#FF7714] dark:text-[#FF7714] xl:text-[60px] md:text-[2rem] font-bold ">Programer</span>
           </motion.h2>
           <motion.p
             key={index}
@@ -154,14 +153,14 @@ const Banner = () => {
             animate="animate"
             exit="exit"
             whileHover="hover"
-            className="text-[#090909] dark:text-[#ffff] py-[20px] mb-[25px]  font-semibold"
+            className="text-[#090909] dark:text-[#ffff] py-[1.25rem] mb-[1.6rem] sm:max-w-[15rem] xl:max-w-[30rem] font-semibold"
           >
             {contents[index]}
           </motion.p>
           <motion.button
             onClick={handleNavigate}
             variants={buttonHover}
-            className="w-[248px] h-[55px] font-bold shadow-2xl bg-[#FF7714] ml-[40px] text-white "
+            className="w-[248px] h-[55px] font-bold shadow-2xl bg-[#FF7714] xl:ml-[40px] text-white "
             initial="initial"
             whileHover="hover"
             animate="animate"
@@ -173,7 +172,7 @@ const Banner = () => {
           variants={CvBlockVariants}
           animate="animate"
           whileHover="hover"
-          className="mr-[200px] mt-[50px] relative "
+          className="xl:mr-[200px] mt-[50px] md:mr-0  relative "
         >
           {activeTab === 0 && (
             <motion.div>
@@ -227,7 +226,7 @@ const Banner = () => {
               <motion.div
                 initial="initial"
                 animate="animate"
-                className="absolute left-[-91px] top-[58px] z-0"
+                className="absolute xl:left-[5rem] xl:top-[2rem] sm:left-[4rem] sm:top-[2rem] z-0"
                 transition={{ delay: 4 }}
               >
                 <motion.div
@@ -265,7 +264,7 @@ const Banner = () => {
                 variants={CvVariants}
                 initial="initial"
                 animate="animate"
-                className="relative z-10 right-[100px]"
+                className="relative z-10 xl:right-[100px] sm:left-[50px]"
               >
                 <Image width={300} preview={true} src={image5} />
                 <DownloadOutlined style={{ fontSize: "100px", color: "#FF7714", position: "relative" , bottom:250, right:200 }} />
@@ -283,7 +282,7 @@ const Banner = () => {
         
         <Guides activeTab={activeTab} setActiveTab={setActiveTab} />
       </motion.div>
-    </BannerStyle>
+    </>
   );
 };
 export default Banner;

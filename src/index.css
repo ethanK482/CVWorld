@@ -30,23 +30,4 @@ html {
   position: relative;
   /* overflow: hidden; */
 }
-.iphone {
-  height: 500px;
-  position: absolute;
-  top: -165px;
-  right: 550px;
-}
-.iphone2 {
-  top: -54px;
-  right: 150px;
-  rotate: -90deg;
-}
-.letterWrapper h2 {
-  font-weight: 700;
-  font-size: 40px;
-  margin-left: 25px;
-  margin-top: 25px;
-  color: #fff;
-  position: absolute;
-  top: 25%;
-}
+
