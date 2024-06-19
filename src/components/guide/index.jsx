@@ -24,7 +24,7 @@ export const Guides = ({ activeTab, setActiveTab }) => {
   const step3Condition = (index) => index === 0 || index === 1;
   return (
     <div
-    className="flex justify-center md:mt-[6rem] xl:mt-[2rem] relative"
+    className="flex justify-center md:mt-[5rem] xl:mt-[4rem] relative"
     >
       {tabs.map((tab, index) => (
         <motion.div
@@ -46,11 +46,11 @@ export const Guides = ({ activeTab, setActiveTab }) => {
               color: getColorByMode(index),
             }}
             transition={{ duration: 0.15, delay: 0.1 }} // Thêm độ trễ vào transition của màu chữ
-            className="text-[#fff] dark:text-[#000] font-semibold"
+            className="text-[#fff] dark:text-[#000] font-semibold md:text-[1rem] text-[0.7rem] "
           >
             {tab}
             {step3Condition(index) && (
-              <img preview={false} src={Line3} className="mx-[30px] xl:inline-block md:relative sm:hidden" />
+              <img preview={false} src={Line3} className="mx-[30px] xl:inline-block md:relative hidden" />
             )}
           </motion.span>
         </motion.div>

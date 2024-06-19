@@ -9,20 +9,20 @@ export const Introduction2 = () => {
     <div className="introduce2-wrapper  mt-[2rem]">
       <Carousel autoplay speed={3000} dots={false}>
         <div className="carousel-wrapper p-8 bg-custom-gradient-deep h-80 ">
-          <div className="carouselContent flex items-center xl:gap-[7rem] sm:gap-[2rem]">
+          <div className="carouselContent flex items-center xl:gap-[7rem] sm:gap-[2rem] gap-[2rem]">
             <div className="expectInfo relative">
               <img
                 src={hinh1}
                 alt=""
-                className="w-[16rem] h-[16rem] object-cover rounded-full"
+                className="w-[18rem] h-[16rem] md:w-[16rem] md:h-[16rem] object-cover rounded-full"
               />
             </div>
             <div className="feedback text-white relative">
               <div className="des">
-                <span className="text-white xl:text-[1.5rem] sm:text-[0.75rem]  block">
+                <span className="text-white xl:text-[1.5rem] sm:text-[0.75rem] block">
                   HUYNH VAN MANH
                 </span>
-                <span className="xl:text-[1rem] sm:text-[0.75rem] block text-orange-400 ">
+                <span className="xl:text-[1rem] sm:text-[0.5rem] block text-orange-400 ">
                   EpPeTe University
                 </span>
               </div>
@@ -38,17 +38,17 @@ export const Introduction2 = () => {
           </div>
         </div>
         <div className="carousel-wrapper  p-8 bg-custom-gradient-ocean h-80">
-          <div className="carouselContent flex items-center xl:gap-[7rem] sm:gap-[2rem]">
+          <div className="carouselContent flex items-center xl:gap-[7rem] sm:gap-[2rem] gap-[2rem]">
             <div className="expectInfo relative">
               <img
                 src={hinh2}
                 alt=""
-                className="w-[16rem] h-[16rem] object-cover rounded-full"
+                className="w-[18rem] h-[16rem] md:w-[16rem] md:h-[16rem] object-cover rounded-full"
               />
             </div>
             <div className="feedback text-white relative">
               <div className="des">
-                <span className="text-green-200 xl:text-[1.5rem] sm:text-[0.75rem] block">
+                <span className="text-green-200 xl:text-[1.5rem] sm:text-[0.5rem] block">
                   HUYNH KIM HUY
                 </span>
                 <span className=" xl:text-[1rem] sm:text[0.5rem] block ">
@@ -64,17 +64,17 @@ export const Introduction2 = () => {
           </div>
         </div>
         <div className="carousel-wrapper p-8 bg-custom-gradient-blue-pink h-80 ">
-          <div className="carouselContent flex items-center gap-[7rem] sm:gap-[2rem]">
+          <div className="carouselContent flex items-center gap-[7rem] sm:gap-[2rem] gap-[2rem]">
             <div className="expectInfo relative">
               <img
                 src={hinh3}
                 alt=""
-                className="w-[16rem] h-[16rem] object-cover rounded-full"
+                className="w-[18rem] h-[16rem] md:w-[16rem] md:h-[16rem] object-cover rounded-full"
               />
             </div>
             <div className="feedback text-white relative">
               <div className="des">
-                <span className="text-pink-200 xl:text-[1.5rem] sm:text-[0.75rem] block">
+                <span className="text-pink-200 xl:text-[1.5rem] sm:text-[0.5rem] block">
                   VO HOANG KIET
                 </span>
                 <span className="xl:text-[1rem] sm:text[0.5rem] block text-orange-200">
