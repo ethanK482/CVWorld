@@ -12,16 +12,15 @@ import image5 from "../../images/image5.svg";
 import Around from "../../images/Around.jsx";
 import { useEffect, useState } from "react";
 import { Guides } from "../guide/index.jsx";
-import MainButton from "../mainButton/index.jsx";
+import { useNavigate } from "react-router-dom";
 const contents = [
   "Write your future into the new world",
   "Create a Professional CV in Minutes",
   "Stand Out from the Crowd with CV World",
 ];
 const Banner = () => {
-
   const CVS = [CV, cv1, cv2, cv3];
-
+  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [isShowFront, setIsShowFront] = useState(true);
@@ -43,7 +42,9 @@ const Banner = () => {
     };
   }, [index]);
   
-
+  const handleNavigate = ()=>{
+    navigate("/templates");
+  }
   const textVariants = {
     initial: {
       x: -500,
@@ -102,7 +103,26 @@ const Banner = () => {
       },
     },
   };
-
+  const buttonHover = {
+    initial: {
+      y: -10,
+      opacity: 1,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+      },
+    },
+    hover: {
+      scale: 1.1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
   return (
     <>
       <div className="banner flex flex-col items-center md:items-center md:flex-col xl:flex-row xl:justify-between">
@@ -137,9 +157,16 @@ const Banner = () => {
           >
             {contents[index]}
           </motion.p>
-
-          <MainButton title={"Create your CV"} navigateTo={"/templates"}/>
-
+          <motion.button
+            onClick={handleNavigate}
+            variants={buttonHover}
+            className="w-[17rem] h-[55px] font-bold shadow-2xl bg-[#FF7714] xl:ml-[40px] text-white "
+            initial="initial"
+            whileHover="hover"
+            animate="animate"
+          >
+            Create your CV
+          </motion.button>
         </motion.div>
         <motion.div
           variants={CvBlockVariants}
@@ -165,7 +192,7 @@ const Banner = () => {
                 animate="animate"
                 className="absolute left-[-91px] top-[58px] z-0 "
               >
-                <Around width="28rem"/>
+                <Around />
               </motion.div>
             </motion.div>
           )}
@@ -240,7 +267,7 @@ const Banner = () => {
                 className="relative z-10 xl:right-[100px] sm:left-[50px] "
               >
                 <Image width={300} preview={true} src={image5} />
-                <DownloadOutlined className="md:bottom-[200px] md:right-[200px] xl:bottom-[250px] xl:right-[-100px]  " style={{ fontSize: "100px", color: "#FF7714", position: "relative" }} />
+                <DownloadOutlined className="xl:bottom-[17rem] xl:right-[-7rem] md:bottom-[13rem] md:right-[13rem]" style={{ fontSize: "100px", color: "#FF7714", position: "relative" }} />
               </motion.div>
             </motion.div>
           )}
