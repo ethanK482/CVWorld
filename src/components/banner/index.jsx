@@ -186,12 +186,12 @@ const Banner = () => {
               >
                 {isShowFront ? (
                   <img
-                  className="w-[18rem] h-[20rem] md:w-[28rem] md:h-[30rem]"
+                  className="w-[28rem] h-[28rem] md:w-[28rem] md:h-[28.25rem]  "
                     src={image3}
                   />
                 ) : (
                   <img
-                  className="w-[18rem] h-[2g0rem] md:w-[28rem] md:h-[30rem]"
+                  className="w-[28rem] h-[28rem] md:w-[28rem] md:h-[28.25rem]  "
                     src={image4}
                   />
                 )}
@@ -212,12 +212,12 @@ const Banner = () => {
                 >
                   {!isShowFront ? (
                     <img
-                      className="w-[18rem] h-[20rem] md:w-[28rem] md:h-[30rem]"
+                      className="w-[28rem] h-[28rem] md:w-[28rem] md:h-[28.25rem]  "
                       src={image3}
                     />
                   ) : (
                     <img
-                      className="w-[18rem] h-[20rem] md:w-[28rem] md:h-[30rem]"
+                      className="w-[28rem] h-[28rem] md:w-[28rem] md:h-[28.25rem]  "
                       src={image4}
                     />
                   )}
@@ -233,12 +233,12 @@ const Banner = () => {
                 variants={CvVariants}
                 initial="initial"
                 animate="animate"
-                className="relative z-10 xl:right-[100px] sm:left-[50px] right-[-55px] "
+                className="relative z-10 xl:right-[100px] xl:left-[50px] xl:right-[-55px] right-[0px] "
               >
-                <Image width={300} preview={true} src={image5} />
+                <img width className="xl:w-[15.6rem] w-[15.4rem] md:w-[15.6rem]" src={image5} /> 
 
                 <DownloadOutlined
-                  className="xl:bottom-[17rem] xl:right-[-7rem] md:bottom-[13rem] md:right-[13rem] bottom-[12rem] right-[13rem]"
+                  className="xl:bottom-[15rem] md:right-[-5rem] md:bottom-[15rem]   bottom-[18rem] right-[-6rem] "
                   style={{
                     fontSize: "100px",
                     color: "#FF7714",
