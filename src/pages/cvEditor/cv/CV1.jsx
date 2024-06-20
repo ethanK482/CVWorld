@@ -40,7 +40,7 @@ const CV1 = ({ cvState }) => {
             </p>
             <ul className="ml-4 text-sm">
               {item.descriptions?.map((item, index) => (
-                <li key={index}><span className="font-black">· </span>{item.description}</li>
+                <li key={index}> <span className="font-black">• </span>{item.description}</li>
               ))}
             </ul>
           </div>
@@ -59,7 +59,7 @@ const CV1 = ({ cvState }) => {
             </p>
             <ul className="ml-4 text-sm">
               {item.descriptions?.map((item, index) => (
-                <li key={index}><span className="font-black">· </span>{item.description}</li>
+                <li key={index}> <span className="font-black">• </span>{item.description}</li>
               ))}
             </ul>
           </div>
@@ -72,7 +72,7 @@ const CV1 = ({ cvState }) => {
         <ul className="ml-4 text-sm">
           {skills?.map((item, index) => (
             <li key={index}>
-              <span className="font-black">· </span>{item.skillTitle}: {item.skillDetail}
+              <span className="font-black">• </span>{item.skillTitle}: {item.skillDetail}
             </li>
           ))}
         </ul>
