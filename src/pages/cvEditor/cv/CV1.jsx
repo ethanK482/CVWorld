@@ -38,7 +38,7 @@ const CV1 = ({ cvState }) => {
             <p className="text-gray-600 text-sm">
             ({item.start}-{item.end}) · {item.city}  {item.projectLink && <><span>·</span> <a  style={{color:"blue" }} href={item.projectLink}>Project link</a></>}
             </p>
-            <ul className="list-disc  ml-4 text-sm">
+            <ul className="ml-4 text-sm">
               {item.descriptions?.map((item, index) => (
                 <li key={index}>{item.description}</li>
               ))}
@@ -57,7 +57,7 @@ const CV1 = ({ cvState }) => {
             <p className="text-gray-600 text-sm">
               ({item.start} - {item.end}) - GPA: {item.mark}
             </p>
-            <ul className="list-disc  ml-4 text-sm">
+            <ul className="ml-4 text-sm">
               {item.descriptions?.map((item, index) => (
                 <li key={index}>{item.description}</li>
               ))}
@@ -69,7 +69,7 @@ const CV1 = ({ cvState }) => {
         {!!skills.length && (
           <h3 className="text-xl font-semibold mb-1">Skills</h3>
         )}
-        <ul className="list-disc  ml-4 text-sm">
+        <ul className="ml-4 text-sm">
           {skills?.map((item, index) => (
             <li key={index}>
               {item.skillTitle}: {item.skillDetail}
