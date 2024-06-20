@@ -16,9 +16,8 @@ const { TextArea } = Input;
 import BackArrow from "../../images/BackArrow.svg";
 import { getAnswer } from "../../utils/groq";
 import CV3 from "./cv/CV3";
-import {ArrowLeftOutlined} from "@ant-design/icons";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
-
 
 const Editor = () => {
   const { id } = useParams();
@@ -1105,9 +1104,9 @@ const Editor = () => {
 
     return (
       <div className="w-full p-5 flex justify-center min-h-screen md:pt-[10rem] lg:pt-0">
-        <div className="relative lg:w-[55%] w-[70%] ">
-        <Button
-            className="btn-download relative top-[30px] font-bold" 
+        <div className="relative lg:w-[55%] md:w-[70%] min-[390px]:w-[90%]  ">
+          <div className=" "><Button
+            className="btn-download relative ml-[8rem] md:ml-[0] top-[30px] font-bold"
             onClick={() => toPDF()}
           >
             Download
@@ -1115,57 +1114,53 @@ const Editor = () => {
           <Image
             onClick={handleBack}
             width={50}
-            className="hover:opacity-[0.8] absolute top-0 md:left-[-15em] left-[-11em] "
+            className="hover:opacity-[0.8] absolute top-0 left-[-15rem] md:left-[-15em]  "
             preview={false}
             src={BackArrow}
-          />
+          /></div>
+          
           <div
             ref={targetRef}
             className="px-[20px] py-[10px] border-1 bg-white mt-12 "
           >
             {getCvById(id, cvState)}
           </div>
-
         </div>
       </div>
     );
   };
-  const buttonHover = {
-    initial: {
-      y: -10,
-      opacity: 1,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.1,
-      },
-    },
-    hover: {
-      scale: 1.1,
-      transition: {
-        duration: 0.3,
-      },
-    },
-  };
+  // const buttonHover = {
+  //   initial: {
+  //     y: -10,
+  //     opacity: 1,
+  //   },
+  //   animate: {
+  //     y: 0,
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 1,
+  //       staggerChildren: 0.1,
+  //     },
+  //   },
+  //   hover: {
+  //     scale: 1.1,
+  //     transition: {
+  //       duration: 0.3,
+  //     },
+  //   },
+  // };
   const navigate = useNavigate();
   const renderEditor = () => {
     return (
-      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen  md:mt-[100px] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
+      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen min-[390px]:mt-[7vh]  md:mt-[9vh] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
         <div className="w-[100%] grow ">
-
-        <motion.button
-      onClick={()=> navigate("/templates")}
-      variants={buttonHover}
-      className="text-[white] border-2 border-[#FF7714]  p-[0.75rem] font-bold shadow-2xl flex gap-[0.5rem] w-[248px] h-[55px] justify-center items-center "
-      initial="initial"
-      whileHover="hover"
-      animate="animate"
-    >
-      <ArrowLeftOutlined style={{fontSize: "1.5rem"}}/>Back To Templates 
-    </motion.button>
+          <span
+            onClick={() => navigate("/templates")}
+            className="flex font-bold dark:text-white text-black hover:text-[#FF7714] dark:hover:text-[#FF7714]"
+          >
+            <ArrowLeftOutlined style={{ fontSize: "1.5rem" }} />{" "}
+            <span className="ml-1">Back </span>{" "}
+          </span>
 
           <div className="hidden lg:block">
             <Steps

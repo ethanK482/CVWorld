@@ -120,7 +120,7 @@ const Banner = () => {
           </motion.h2>
           <motion.h2
 
-            className="dark:text-[#ffff] dark:text-[#ffff] xl:text-[4rem] md:text-[4rem] text-[2.25rem] font-bold "
+            className=" dark:text-[#ffff] xl:text-[4rem] md:text-[4rem] text-[2.25rem] font-bold "
             variants={textVariants}
             whileHover="hover"
           >
@@ -142,7 +142,7 @@ const Banner = () => {
             {contents[index]}
           </motion.p>
 
-          <MainButton title={"Create your CV"} navigateTo={"/templates"} />
+         <div className="lg:ml-[10px]"><MainButton title={"Create your CV"} navigateTo={"/templates"} /></div> 
 
         </motion.div>
         <motion.div

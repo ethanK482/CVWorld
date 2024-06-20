@@ -24,7 +24,7 @@ export const Guides = ({ activeTab, setActiveTab }) => {
   const step3Condition = (index) => index === 0 || index === 1;
   return (
     <div
-    className="flex justify-center md:mt-[5rem] xl:mt-[4rem] relative"
+    className="flex justify-center md:mt-[5rem]  relative lg:top-[3rem]"
     >
       {tabs.map((tab, index) => (
         <motion.div
@@ -50,7 +50,7 @@ export const Guides = ({ activeTab, setActiveTab }) => {
           >
             {tab}
             {step3Condition(index) && (
-              <img preview={false} src={Line3} className="mx-[30px] xl:inline-block md:relative hidden" />
+              <img  src={Line3} className="mx-[30px] xl:inline-block md:relative hidden" />
             )}
           </motion.span>
         </motion.div>

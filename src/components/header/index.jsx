@@ -9,7 +9,7 @@ const Header = ({ onSetDarkMode, darkMode }) => {
   }
   return (
 
-    <div  className="flex h-[99%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
+    <div  className="flex h-[100%] justify-between items-center  shadow-custom-light dark:shadow-custom-dark">
           <img onClick={handleNavigate} className="ml-3 w-[5rem] md:w-[6.25rem]"  src={LOGO}/>
 
 

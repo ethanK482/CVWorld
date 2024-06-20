@@ -34,7 +34,7 @@ const CVList = () => {
   {cvList.map((cv, index) => {
     return (
       <div key={index} className="text-center relative">
-        <div className="relative md:h-[400px] lg:h-[470px] min-[390px]:h-[470px]  w-[100%] aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0">
+        <div className="relative md:h-[400px] lg:h-[470px] min-[390px]:h-[380px]  w-[100%] aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0">
           {index === indexBlur && (
             <button
               onClick={() => handleClickEdit(index)}
