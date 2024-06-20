@@ -167,9 +167,9 @@ const Banner = () => {
                 variants={CvAroundVariants}
                 initial="initial"
                 animate="animate"
-                className="hidden md:block absolute left-[-91px] top-[58px] z-0 "
+                className="hidden md:block absolute lg:top-[53px] left-[-91px] top-[58px] z-0 "
               >
-                <Around width="28rem"/>
+                <Around width="26.5rem"/>
               </motion.div>
             </motion.div>
           )}
