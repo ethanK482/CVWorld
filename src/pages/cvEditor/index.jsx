@@ -1152,11 +1152,11 @@ const Editor = () => {
   const navigate = useNavigate();
   const renderEditor = () => {
     return (
-      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen min-[390px]:mt-[7vh]  md:mt-[9vh] lg:mt-[0]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
+      <div className="flex justify-between m-2 p-5 gap-3 min-h-screen min-[390px]:mt-[7vh]  md:mt-[9vh] lg:mt-[-2vh]  min-[320px]:flex-col min-[320px]:max-w-full min-[900px]:max-w-[50%]">
         <div className="w-[100%] grow ">
           <span
             onClick={() => navigate("/templates")}
-            className="flex font-bold dark:text-white text-black hover:text-[#FF7714] dark:hover:text-[#FF7714]"
+            className="flex font-bold dark:text-white lg:pt-3 text-black hover:text-[#FF7714] dark:hover:text-[#FF7714]"
           >
             <ArrowLeftOutlined style={{ fontSize: "1.5rem" }} />{" "}
             <span className="ml-1">Back </span>{" "}
