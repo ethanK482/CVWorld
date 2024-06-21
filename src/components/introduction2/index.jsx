@@ -64,7 +64,7 @@ export const Introduction2 = () => {
           </div>
         </div>
         <div className="carousel-wrapper p-8 bg-custom-gradient-blue-pink h-80 ">
-          <div className="carouselContent flex items-center gap-[7rem] sm:gap-[2rem] gap-[2rem]">
+          <div className="carouselContent flex items-center  sm:gap-[2rem] gap-[2rem]">
             <div className="expectInfo relative">
               <img
                 src={hinh3}

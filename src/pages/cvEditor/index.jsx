@@ -1159,7 +1159,7 @@ const Editor = () => {
             className="flex font-bold dark:text-white lg:pt-3 text-black hover:text-[#FF7714] dark:hover:text-[#FF7714]"
           >
             <ArrowLeftOutlined style={{ fontSize: "1.5rem" }} />{" "}
-            <span className="ml-1">Back </span>{" "}
+            <span className="ml-1 cursor-pointer">Back </span>{" "}
           </span>
 
           <div className="hidden lg:block">
